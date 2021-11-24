@@ -11,14 +11,22 @@ public class Book {
 
     private String title;
 
-    private int year;
-
     private List<String> authors;
+
+    private int year;
 
     private BigDecimal price;
 
-    public Book() {
+    private Book() {
         this.bookId = RandomUtils.nextLong();
+    }
+
+    public Book(String title, List<String> authors, int year, BigDecimal price) {
+        this();
+        this.title = title;
+        this.authors = authors;
+        this.year = year;
+        this.price = price;
     }
 
     public long getBookId() {

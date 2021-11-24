@@ -7,4 +7,6 @@ import java.util.List;
 public interface BookRepository {
 
     List<Book> getAll();
+
+    boolean existsById(long bookId);
 }

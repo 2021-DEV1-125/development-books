@@ -1,13 +1,25 @@
 package co.okizuys.bnp.developmentbooks.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ShoppingCart {
 
-    private final List<CartItem> items = new ArrayList<>();
+  @Valid private final Set<CartItem> items = new HashSet<>();
 
-    public List<CartItem> getItems() {
-        return items;
-    }
+  public void addItem(CartItem item) {
+    items.add(item);
+  }
+
+  public Set<CartItem> getItems() {
+    return items;
+  }
+
+  @JsonIgnore
+  public boolean isEmpty() {
+    return items.isEmpty();
+  }
 }
