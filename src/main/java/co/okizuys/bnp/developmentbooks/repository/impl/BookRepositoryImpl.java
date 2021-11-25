@@ -3,7 +3,6 @@ package co.okizuys.bnp.developmentbooks.repository.impl;
 import co.okizuys.bnp.developmentbooks.domain.Author;
 import co.okizuys.bnp.developmentbooks.domain.Book;
 import co.okizuys.bnp.developmentbooks.repository.BookRepository;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
@@ -20,11 +19,9 @@ public class BookRepositoryImpl implements BookRepository {
   @Override
   public List<Book> getAll() {
     if (books.isEmpty()) {
+      books.add(new Book("Clean Code", List.of(Author.ROBERT_MARTIN.fullName()), 2008, BOOK_PRICE));
       books.add(
-          new Book("Clean Code", List.of(Author.ROBERT_MARTIN.fullName()), 2008, BOOK_PRICE));
-      books.add(
-          new Book(
-              "The Clean Coder", List.of(Author.ROBERT_MARTIN.fullName()), 2011, BOOK_PRICE));
+          new Book("The Clean Coder", List.of(Author.ROBERT_MARTIN.fullName()), 2011, BOOK_PRICE));
       books.add(
           new Book(
               "Clean Architecture", List.of(Author.ROBERT_MARTIN.fullName()), 2017, BOOK_PRICE));
