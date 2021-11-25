@@ -9,4 +9,6 @@ public interface BookRepository {
     List<Book> getAll();
 
     boolean existsById(long bookId);
+
+    Book getById(long bookId);
 }

@@ -22,4 +22,12 @@ public class ShoppingCart {
   public boolean isEmpty() {
     return items.isEmpty();
   }
+
+  public int size() {
+    return items.stream().map(CartItem::getCount).reduce(0, Integer::sum);
+  }
+
+  public int length() {
+    return items.size();
+  }
 }

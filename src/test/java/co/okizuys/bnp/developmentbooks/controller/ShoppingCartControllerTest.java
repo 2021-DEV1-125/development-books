@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -60,8 +59,7 @@ class ShoppingCartControllerTest extends AbstractControllerTest {
   void getPrice_whenInvalidBooksCount_thenStatusBadRequest() throws Exception {
 
     ShoppingCart shoppingCart = new ShoppingCart();
-    List<Book> books =
-        List.of(new Book("Test book", List.of("Book author"), 2021, BigDecimal.valueOf(50)));
+    List<Book> books = List.of(new Book("Test book", List.of("Book author"), 2021));
     shoppingCart.addItem(new CartItem(books.get(0).getBookId(), -2));
 
     mockMvc
