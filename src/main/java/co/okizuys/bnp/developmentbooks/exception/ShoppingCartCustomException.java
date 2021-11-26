@@ -8,7 +8,7 @@ public class ShoppingCartCustomException extends RuntimeException {
 
   private final String reason;
   private final Throwable cause;
-  private List<ApiSubError> subErrors;
+  private final List<ApiSubError> subErrors;
 
   public ShoppingCartCustomException(@Nullable String reason, @Nullable List<ApiSubError> subErrors) {
     this.reason = reason;

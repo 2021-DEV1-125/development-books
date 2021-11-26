@@ -2,7 +2,6 @@ package co.okizuys.bnp.developmentbooks.domain;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public class Book {
